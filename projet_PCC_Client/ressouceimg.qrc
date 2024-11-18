@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/logo">
+        <file>logo.png</file>
+    </qresource>
+    <qresource prefix="/client">
+        <file>clients.png</file>
+    </qresource>
+    <qresource prefix="/delivery">
+        <file>deliveries.png</file>
+    </qresource>
+    <qresource prefix="/employees">
+        <file>employees.png</file>
+    </qresource>
+    <qresource prefix="/factories">
+        <file>factories.png</file>
+    </qresource>
+    <qresource prefix="/dashboard">
+        <file>dashboard.png</file>
+    </qresource>
+    <qresource prefix="/ppersonne"/>
+</RCC>
