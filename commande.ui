@@ -1,0 +1,2060 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>commande</class>
+ <widget class="QMainWindow" name="commande">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1440</width>
+    <height>1080</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>commande</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background:white;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>20</y>
+      <width>171</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">*{
+color: var(--Dark-500, #16151C);
+
+/* Header-6 Bold */
+font-family: Lexend;
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: 30px; /* 150% */
+background:none;
+}</string>
+    </property>
+    <property name="text">
+     <string>All deliveries</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>280</width>
+      <height>831</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgba(236,236,236,108);
+
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QPushButton" name="Dashboard_Button">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>110</y>
+       <width>220</width>
+       <height>50</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+background-color:rgba(236,236,236,108);
+
+
+border: 1px solid;
+border-color:#ececec;
+font-family: Lexend;
+font-size: 16px;
+}
+QPushButton:hover
+{
+background:#aaaaaa;
+color:#1BA019;
+border-left:3.5px solid #1BA019 ; 
+border-color:none;
+border-radius:5px;
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #ffffff, stop: 1 #dcdcdc);
+
+
+}
+QPushButton:pressed
+{
+background:#aaaaaa;
+color:#1BA019;
+border-left:5px solid #1BA019 ; 
+border-color:none;
+border-radius:10px;
+/*background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #ffffff, stop: 1 #dcdcdc);*/
+}</string>
+     </property>
+     <property name="text">
+      <string>Dashboard</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Employee_Button">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>160</y>
+       <width>220</width>
+       <height>50</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+background-color:rgba(236,236,236,108);
+
+border: 1px solid;
+border-color:#ececec;
+font-family: Lexend;
+font-size: 16px;
+}
+QPushButton:hover
+{
+background:#aaaaaa;
+color:#1BA019;
+border-left:3.5px solid #1BA019 ; 
+border-color:none;
+border-radius:5px;
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #ffffff, stop: 1 #dcdcdc);
+
+
+}
+QPushButton:pressed
+{
+background:#aaaaaa;
+color:#1BA019;
+border-left:5px solid #1BA019 ; 
+border-color:none;
+border-radius:10px;
+/*background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #ffffff, stop: 1 #dcdcdc);*/
+}</string>
+     </property>
+     <property name="text">
+      <string>Employees</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Factories_Button">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>210</y>
+       <width>220</width>
+       <height>50</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+background-color:rgba(236,236,236,108);
+border: 1px solid;
+border-color:#ececec;
+font-family: Lexend;
+font-size: 16px;
+}
+QPushButton:hover
+{
+background:#aaaaaa;
+color:#1BA019;
+border-left:3.5px solid #1BA019 ; 
+border-color:none;
+border-radius:5px;
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #ffffff, stop: 1 #dcdcdc);
+
+
+}
+QPushButton:pressed
+{
+background:#aaaaaa;
+color:#1BA019;
+border-left:5px solid #1BA019 ; 
+border-color:none;
+border-radius:10px;
+/*background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #ffffff, stop: 1 #dcdcdc);*/
+}</string>
+     </property>
+     <property name="text">
+      <string>Factories</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Deliveries_Button">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>260</y>
+       <width>220</width>
+       <height>50</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+background-color:rgba(236,236,236,108);
+
+
+border: 1px solid;
+border-color:#ececec;
+font-family: Lexend;
+font-size: 16px;
+}
+QPushButton:hover
+{
+background:#aaaaaa;
+color:#1BA019;
+border-left:3.5px solid #1BA019 ; 
+border-color:none;
+border-radius:5px;
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #ffffff, stop: 1 #dcdcdc);
+
+
+}
+QPushButton:pressed
+{
+background:#aaaaaa;
+color:#1BA019;
+border-left:5px solid #1BA019 ; 
+border-color:none;
+border-radius:10px;
+/*background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #ffffff, stop: 1 #dcdcdc);*/
+}</string>
+     </property>
+     <property name="text">
+      <string>Delivries</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_8">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>310</y>
+       <width>220</width>
+       <height>50</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+background-color:rgba(236,236,236,108);
+
+
+border: 1px solid;
+border-color:#ececec;
+font-family: Lexend;
+font-size: 16px;
+}
+QPushButton:hover
+{
+background:#aaaaaa;
+color:#1BA019;
+border-left:3.5px solid #1BA019 ; 
+border-color:none;
+border-radius:5px;
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #ffffff, stop: 1 #dcdcdc);
+
+
+}
+QPushButton:pressed
+{
+background:#aaaaaa;
+color:#1BA019;
+border-left:5px solid #1BA019 ; 
+border-color:none;
+border-radius:10px;
+/*background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #ffffff, stop: 1 #dcdcdc);*/
+}</string>
+     </property>
+     <property name="text">
+      <string>Clients</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_14">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>120</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:none;
+border-radius: 20px;
+border: px solid;
+border-color:none;
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="resources.qrc">:/figma/apps.png</pixmap>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_15">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>220</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:none;
+border-radius: 20px;
+border: px solid;
+border-color:none;
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="resources.qrc">:/figma/community.png</pixmap>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_16">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>270</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:none;
+border-radius: 20px;
+border: px solid;
+border-color:none;
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="resources.qrc">:/figma/notepad.png</pixmap>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_17">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>170</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:none;
+border-radius: 20px;
+border: px solid;
+border-color:none;
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="resources.qrc">:/figma/users 02.png</pixmap>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_18">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>320</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:none;
+border-radius: 20px;
+border: px solid;
+border-color:none;
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="resources.qrc">:/figma/users 01.png</pixmap>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>30</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="resources.qrc">:/figma/cannitech_logo.svg</pixmap>
+     </property>
+    </widget>
+    <zorder>Dashboard_Button</zorder>
+    <zorder>Employee_Button</zorder>
+    <zorder>Factories_Button</zorder>
+    <zorder>Deliveries_Button</zorder>
+    <zorder>pushButton_8</zorder>
+    <zorder>label_14</zorder>
+    <zorder>label_17</zorder>
+    <zorder>label_15</zorder>
+    <zorder>label_16</zorder>
+    <zorder>label_18</zorder>
+    <zorder>label_2</zorder>
+   </widget>
+   <widget class="QFrame" name="frame_2">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>20</y>
+      <width>311</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 8px;
+border: 1px solid;
+border-color:gray;
+background:white;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>10</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:gray;
+background:white;
+border: 0px solid;
+border-color:none;
+
+/* Body-1 Regular */
+font-family: Lexend;
+font-size: 16px;
+font-style: normal;
+font-weight: 300;
+line-height: 24px; /* 150% */</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Search</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_12">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:none;
+border-radius: 20px;
+border: 1px solid;
+border-color:none;
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="resources.qrc">:/Icon.png</pixmap>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>1120</x>
+      <y>20</y>
+      <width>50</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:#D3D3D3;
+border-radius: 20px;
+border: 1px solid;
+border-color:#D3D3D3;
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normalon>:/figma/notification.png</normalon>
+     </iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>40</y>
+      <width>131</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">*{
+
+color:gray;
+/* Body-2 Regular */
+font-family:Lexend;
+font-size:14px;
+font-style: normal;
+font-weight: 300;
+line-height: 22px; /* 157.143% */
+background:none;
+}</string>
+    </property>
+    <property name="text">
+     <string>Show All candidates</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame_4">
+    <property name="geometry">
+     <rect>
+      <x>1200</x>
+      <y>20</y>
+      <width>191</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 8px;
+border: 1px solid;
+border-color:gray;
+background:white;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QPushButton" name="pushButton_9">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>50</width>
+       <height>50</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:none;
+border-radius: 20px;
+border: 1px solid;
+border-color:none;
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="resources.qrc">
+       <normaloff>:/figma/pngwing.com.png</normaloff>:/figma/pngwing.com.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>30</width>
+       <height>30</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_19">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>3</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">*{
+background:none;
+border:none;
+font-family: Lexend;
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+}</string>
+     </property>
+     <property name="text">
+      <string>Username</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_20">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>20</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">*{
+
+color:gray;
+font-family:Lexend;
+font-size:14px;
+font-style: normal;
+font-weight: 300;
+line-height: 22px; 
+background:none;
+border:none;
+}
+
+
+
+</string>
+     </property>
+     <property name="text">
+      <string>Position</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QStackedWidget" name="main_rose">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>80</y>
+      <width>1211</width>
+      <height>781</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*background:pink;*/
+background:none;</string>
+    </property>
+    <widget class="QWidget" name="delivery">
+     <widget class="QStackedWidget" name="stackedWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1291</width>
+        <height>761</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>CrossCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgba(255,255,255,128);</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="maindelivery">
+       <widget class="QFrame" name="frame_3">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>60</y>
+          <width>371</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius: 8px;
+border: 1px solid;
+border-color:gray;
+background:white;</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Raised</enum>
+        </property>
+        <widget class="QLineEdit" name="lineEdit_4">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>10</y>
+           <width>321</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color:gray;
+background:white;
+border: 0px solid;
+border-color:none;
+
+/* Body-1 Regular */
+font-family: Lexend;
+font-size: 16px;
+font-style: normal;
+font-weight: 300;
+line-height: 24px; /* 150% */</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="placeholderText">
+          <string>search</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_11">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>31</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:none;
+border-radius: 20px;
+border: 1px solid;
+border-color:none;
+</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="resources.qrc">:/Icon.png</pixmap>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="geometry">
+         <rect>
+          <x>690</x>
+          <y>50</y>
+          <width>211</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">*{
+background:#1ba019;
+border-radius:10px;
+color:white;
+font-family: Lexend;
+font-size:16px;
+}
+QPushButton:hover
+{
+background:#00b521;
+color:white;
+border-left:3.5px solid #1BA019 ; 
+border-color:none;
+border-radius:10px;
+
+
+
+
+}
+QPushButton:pressed
+{
+background:#013220;
+color:black;
+border-radius:10px;
+color:white;
+font-family: Lexend;
+font-size:16px;
+border-radius:10px;
+border-left:3.5px solid #1BA019 ; 
+
+
+/*background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #ffffff, stop: 1 #dcdcdc);*/
+}</string>
+        </property>
+        <property name="text">
+         <string>Add New Delivery</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/figma/add-circle.png</normalon>
+         </iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QTableWidget" name="tableWidget">
+        <property name="geometry">
+         <rect>
+          <x>45</x>
+          <y>201</y>
+          <width>1051</width>
+          <height>561</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <kerning>false</kerning>
+         </font>
+        </property>
+        <property name="cursor" stdset="0">
+         <cursorShape>CrossCursor</cursorShape>
+        </property>
+        <property name="mouseTracking">
+         <bool>true</bool>
+        </property>
+        <property name="statusTip">
+         <string notr="true"/>
+        </property>
+        <property name="whatsThis">
+         <string notr="true"/>
+        </property>
+        <property name="accessibleName">
+         <string notr="true"/>
+        </property>
+        <property name="accessibleDescription">
+         <string notr="true"/>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QTableWidget {
+background-color:transparent;
+border:none;
+}
+QHeaderView::section {
+    border: none;
+background-color:white;
+}
+
+
+QScrollBar:vertical {
+    border:none;
+    background:#85DD84;
+    width: 12px;
+}
+
+QScrollBar::handle:vertical {
+    background: #1BA019;
+}
+
+QScrollBar::add-page:vertical {
+	background: #9CD79B;
+}
+QScrollBar::sub-page:vertical {
+	background: #9CD79B;
+}
+</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::StyledPanel</enum>
+        </property>
+        <property name="showDropIndicator" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="dragEnabled">
+         <bool>false</bool>
+        </property>
+        <property name="dragDropOverwriteMode">
+         <bool>false</bool>
+        </property>
+        <property name="defaultDropAction">
+         <enum>Qt::DropAction::IgnoreAction</enum>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>false</bool>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::SelectionMode::NoSelection</enum>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>100</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="showGrid">
+         <bool>true</bool>
+        </property>
+        <property name="sortingEnabled">
+         <bool>true</bool>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+        <attribute name="horizontalHeaderCascadingSectionResizes">
+         <bool>false</bool>
+        </attribute>
+        <attribute name="horizontalHeaderDefaultSectionSize">
+         <number>150</number>
+        </attribute>
+        <attribute name="horizontalHeaderHighlightSections">
+         <bool>false</bool>
+        </attribute>
+        <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+         <bool>true</bool>
+        </attribute>
+        <attribute name="horizontalHeaderStretchLastSection">
+         <bool>false</bool>
+        </attribute>
+        <attribute name="verticalHeaderVisible">
+         <bool>false</bool>
+        </attribute>
+        <attribute name="verticalHeaderCascadingSectionResizes">
+         <bool>false</bool>
+        </attribute>
+        <attribute name="verticalHeaderDefaultSectionSize">
+         <number>40</number>
+        </attribute>
+        <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+         <bool>true</bool>
+        </attribute>
+        <attribute name="verticalHeaderStretchLastSection">
+         <bool>false</bool>
+        </attribute>
+        <column>
+         <property name="text">
+          <string>DeliveryID</string>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>DeliveryAdress</string>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>STATUS</string>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>LastEditDate</string>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>ClientID</string>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>EmployeeID</string>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Qrcode</string>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+        </column>
+       </widget>
+       <widget class="QPushButton" name="edit_table_button">
+        <property name="geometry">
+         <rect>
+          <x>980</x>
+          <y>50</y>
+          <width>51</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*background:#D3D3D3;*/
+border-radius: 20px;
+border: 1px solid;
+border-color:#D3D3D3;
+/*background:#478ecc;
+azra9*/
+background:#f8981d;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="resources.qrc">
+          <normaloff>:/figma/pnghut_user-profile-editing-logo-symbol.png</normaloff>:/figma/pnghut_user-profile-editing-logo-symbol.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>40</width>
+          <height>40</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="button_delete">
+        <property name="geometry">
+         <rect>
+          <x>1040</x>
+          <y>50</y>
+          <width>51</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*background:#D3D3D3;*/
+border-radius: 20px;
+border: 1px solid;
+border-color:#D3D3D3;
+background:#F04438;
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="resources.qrc">
+          <normaloff>:/figma/supprimer.png</normaloff>:/figma/supprimer.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>30</width>
+          <height>30</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="export_table">
+        <property name="geometry">
+         <rect>
+          <x>920</x>
+          <y>50</y>
+          <width>50</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:#478ECC;
+border-radius: 20px;
+border: 1px solid;
+border-color:#D3D3D3;
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="resources.qrc">
+          <normaloff>:/figma/export.png</normaloff>:/figma/export.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>30</width>
+          <height>30</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="statsbutton">
+        <property name="geometry">
+         <rect>
+          <x>590</x>
+          <y>50</y>
+          <width>83</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="resources.qrc">
+          <normaloff>:/figma/stats.png</normaloff>:/figma/stats.png</iconset>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="add_delivery">
+       <widget class="QLabel" name="label_4">
+        <property name="geometry">
+         <rect>
+          <x>64</x>
+          <y>150</y>
+          <width>561</width>
+          <height>611</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:5px;
+border-color: none;
+border-width : 1px;
+border-style:solid;
+color: rgb(27, 160, 25);
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources.qrc">:/figma/final2.jpg</pixmap>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QFrame" name="frame_5">
+        <property name="geometry">
+         <rect>
+          <x>640</x>
+          <y>150</y>
+          <width>491</width>
+          <height>611</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:white;</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Raised</enum>
+        </property>
+        <widget class="QLabel" name="label_3">
+         <property name="geometry">
+          <rect>
+           <x>130</x>
+           <y>50</y>
+           <width>211</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">*{
+color: var(--Dark-500, #16151C);
+
+font-family: Lexend;
+font-size: 25px;
+font-style: normal;
+font-weight: 600;
+line-height: 30px; 
+background:none;
+}</string>
+         </property>
+         <property name="text">
+          <string>Add new delivery</string>
+         </property>
+        </widget>
+        <widget class="QGroupBox" name="groupBox_2">
+         <property name="geometry">
+          <rect>
+           <x>90</x>
+           <y>240</y>
+           <width>281</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border-radius:10px;
+border-color: rgb(27, 160, 25);
+border-width : 1.2px;
+border-style:solid;
+color: rgb(27, 160, 25);
+</string>
+         </property>
+         <property name="title">
+          <string>ClientID</string>
+         </property>
+         <widget class="QLineEdit" name="lineEdit_clientID">
+          <property name="geometry">
+           <rect>
+            <x>12</x>
+            <y>20</y>
+            <width>261</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-radius:0px;
+border-color: rgb(27, 160, 25);
+border-width : 0x;
+color:grey;</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QGroupBox" name="groupBox_3">
+         <property name="geometry">
+          <rect>
+           <x>90</x>
+           <y>330</y>
+           <width>281</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border-radius:10px;
+border-color: rgb(27, 160, 25);
+border-width : 1.2px;
+border-style:solid;
+color: rgb(27, 160, 25);
+</string>
+         </property>
+         <property name="title">
+          <string>EmployeeID</string>
+         </property>
+         <widget class="QLineEdit" name="lineEdit_employeeID">
+          <property name="geometry">
+           <rect>
+            <x>12</x>
+            <y>20</y>
+            <width>261</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-radius:0px;
+border-color: rgb(27, 160, 25);
+border-width : 0x;
+color:grey;</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QGroupBox" name="groupBox_4">
+         <property name="geometry">
+          <rect>
+           <x>90</x>
+           <y>150</y>
+           <width>281</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border-radius:10px;
+border-color: rgb(27, 160, 25);
+border-width : 1.2px;
+border-style:solid;
+color: rgb(27, 160, 25);
+</string>
+         </property>
+         <property name="title">
+          <string>DeliveryAdress</string>
+         </property>
+         <widget class="QLineEdit" name="lineEdit_deliveryAddress">
+          <property name="geometry">
+           <rect>
+            <x>12</x>
+            <y>20</y>
+            <width>261</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-radius:0px;
+border-color: rgb(27, 160, 25);
+border-width : 0x;
+color:grey;</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QPushButton" name="pushButton_10">
+         <property name="geometry">
+          <rect>
+           <x>70</x>
+           <y>510</y>
+           <width>281</width>
+           <height>50</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">*{
+background:#1ba019;
+border-radius:10px;
+color:white;
+font-family: Lexend;
+font-size:16px;
+}
+QPushButton:hover
+{
+background:#00b521;
+color:white;
+border-left:3.5px solid #1BA019 ; 
+border-color:none;
+border-radius:10px;
+
+
+
+
+}
+QPushButton:pressed
+{
+background:#013220;
+color:black;
+border-radius:10px;
+color:white;
+font-family: Lexend;
+font-size:16px;
+border-radius:10px;
+border-left:3.5px solid #1BA019 ; 
+
+
+/*background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #ffffff, stop: 1 #dcdcdc);*/
+}</string>
+         </property>
+         <property name="text">
+          <string>Add</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+        <widget class="QGroupBox" name="groupBox_6">
+         <property name="geometry">
+          <rect>
+           <x>90</x>
+           <y>420</y>
+           <width>101</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border-radius:10px;
+border-color: rgb(27, 160, 25);
+border-width : 1.2px;
+border-style:solid;
+color: rgb(27, 160, 25);
+</string>
+         </property>
+         <property name="title">
+          <string>DeliveryID</string>
+         </property>
+         <widget class="QLineEdit" name="lineEdit_DeliveryID">
+          <property name="geometry">
+           <rect>
+            <x>12</x>
+            <y>20</y>
+            <width>81</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-radius:0px;
+border-color: rgb(27, 160, 25);
+border-width : 0x;
+color:grey;</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QComboBox" name="comboBox_Status">
+         <property name="geometry">
+          <rect>
+           <x>250</x>
+           <y>420</y>
+           <width>121</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border-radius:10px;
+border-color: rgb(27, 160, 25);
+border-width : 1.2px;
+border-style:solid;
+color: rgb(27, 160, 25);
+</string>
+         </property>
+         <item>
+          <property name="text">
+           <string>Status</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Ordered</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>In Progress</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Delivered</string>
+          </property>
+         </item>
+        </widget>
+       </widget>
+       <widget class="QPushButton" name="return_main">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>70</y>
+          <width>51</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:#D3D3D3;
+border-radius: 20px;
+border: 1px solid;
+border-color:#D3D3D3;
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="resources.qrc">
+          <normaloff>:/figma/arrow1.png</normaloff>:/figma/arrow1.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>30</width>
+          <height>30</height>
+         </size>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="timeline">
+       <widget class="QPushButton" name="TL_ORDERED">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>230</y>
+          <width>151</width>
+          <height>150</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:#1BA019;
+/*background:#EFFADC;*/
+border-radius: 70px;
+border: 1px solid;
+border-color:#D3D3D3;
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="resources.qrc">
+          <normaloff>:/figma/ordered.png</normaloff>:/figma/ordered.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>80</width>
+          <height>80</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="TL_IN_PROGRESS">
+        <property name="geometry">
+         <rect>
+          <x>460</x>
+          <y>230</y>
+          <width>151</width>
+          <height>150</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:#1BA019;
+/*background:#CBF84C;*/
+border-radius: 70px;
+border: 1px solid;
+border-color:#D3D3D3;
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="resources.qrc">
+          <normaloff>:/figma/in_progress.png</normaloff>:/figma/in_progress.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>80</width>
+          <height>80</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="TL_DELIVERED">
+        <property name="geometry">
+         <rect>
+          <x>760</x>
+          <y>230</y>
+          <width>151</width>
+          <height>150</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:#1BA019;
+/*background:#93D52D;*/
+border-radius: 70px;
+border: 1px solid;
+border-color:#D3D3D3;
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="resources.qrc">
+          <normaloff>:/figma/delivered.png</normaloff>:/figma/delivered.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>80</width>
+          <height>80</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QProgressBar" name="progressBar_1">
+        <property name="geometry">
+         <rect>
+          <x>310</x>
+          <y>300</y>
+          <width>131</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+border-radius: 5px;
+border: 1px solid;
+
+</string>
+        </property>
+        <property name="minimum">
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>100</number>
+        </property>
+        <property name="value">
+         <number>99</number>
+        </property>
+        <property name="textVisible">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QProgressBar" name="progressBar_2">
+        <property name="geometry">
+         <rect>
+          <x>620</x>
+          <y>300</y>
+          <width>131</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+border-radius: 5px;
+border: 1px solid;
+
+</string>
+        </property>
+        <property name="value">
+         <number>50</number>
+        </property>
+        <property name="textVisible">
+         <bool>false</bool>
+        </property>
+        <property name="invertedAppearance">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Label_ordered">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>410</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">*{
+background: #1BA019;
+border-radius: 12px;
+/* Header-6 Bold */
+font-family: Lexend;
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: 30px; /* 150% */
+
+}</string>
+        </property>
+        <property name="text">
+         <string>Ordered</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Label_in_progress">
+        <property name="geometry">
+         <rect>
+          <x>480</x>
+          <y>410</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">*{
+background: #1BA019;
+border-radius: 12px;
+/* Header-6 Bold */
+font-family: Lexend;
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: 30px; /* 150% */
+
+}</string>
+        </property>
+        <property name="text">
+         <string>In Progress</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Label_delivered">
+        <property name="geometry">
+         <rect>
+          <x>780</x>
+          <y>410</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">*{
+background: #1BA019;
+border-radius: 12px;
+/* Header-6 Bold */
+font-family: Lexend;
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: 30px; /* 150% */
+
+}</string>
+        </property>
+        <property name="text">
+         <string>Delivered</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_6">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>420</y>
+          <width>551</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: #1BA019;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>51</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:#D3D3D3;
+border-radius: 20px;
+border: 1px solid;
+border-color:#D3D3D3;
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="resources.qrc">
+          <normaloff>:/figma/arrow1.png</normaloff>:/figma/arrow1.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>40</width>
+          <height>40</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_ordered">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>190</y>
+          <width>201</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">*{
+background: gray;
+border-radius: 12px;
+color:white;
+/* Header-6 Bold */
+font-family: Lexend;
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: 30px; /* 150% */
+
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_in_progress">
+        <property name="geometry">
+         <rect>
+          <x>440</x>
+          <y>190</y>
+          <width>201</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">*{
+background: gray;
+border-radius: 12px;
+color:white;
+/* Header-6 Bold */
+font-family: Lexend;
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: 30px; /* 150% */
+
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_delivered">
+        <property name="geometry">
+         <rect>
+          <x>740</x>
+          <y>190</y>
+          <width>201</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">*{
+background: gray;
+border-radius: 12px;
+color:white;
+
+/* Header-6 Bold */
+font-family: Lexend;
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: 30px; /* 150% */
+
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <zorder>label_6</zorder>
+       <zorder>progressBar_1</zorder>
+       <zorder>TL_ORDERED</zorder>
+       <zorder>TL_IN_PROGRESS</zorder>
+       <zorder>TL_DELIVERED</zorder>
+       <zorder>progressBar_2</zorder>
+       <zorder>Label_ordered</zorder>
+       <zorder>Label_in_progress</zorder>
+       <zorder>Label_delivered</zorder>
+       <zorder>pushButton_2</zorder>
+       <zorder>label_ordered</zorder>
+       <zorder>label_in_progress</zorder>
+       <zorder>label_delivered</zorder>
+      </widget>
+      <widget class="QWidget" name="page_6">
+       <widget class="QLabel" name="label_qrcode_ordered">
+        <property name="geometry">
+         <rect>
+          <x>330</x>
+          <y>60</y>
+          <width>481</width>
+          <height>481</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources.qrc">:/figma/qrcode_ordered.png</pixmap>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="back_qrcode_ordered">
+        <property name="geometry">
+         <rect>
+          <x>530</x>
+          <y>590</y>
+          <width>121</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Back</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page">
+       <widget class="QLabel" name="label_qrcode_in_progress">
+        <property name="geometry">
+         <rect>
+          <x>340</x>
+          <y>60</y>
+          <width>481</width>
+          <height>481</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources.qrc">:/figma/qrcode_in_progress.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="back_qrcode_in_progress">
+        <property name="geometry">
+         <rect>
+          <x>510</x>
+          <y>600</y>
+          <width>121</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>back</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_2">
+       <widget class="QLabel" name="label_qrcode_delivered">
+        <property name="geometry">
+         <rect>
+          <x>330</x>
+          <y>70</y>
+          <width>481</width>
+          <height>481</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources.qrc">:/figma/qrcode_delivered.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="back_qrcode_delivered">
+        <property name="geometry">
+         <rect>
+          <x>502</x>
+          <y>600</y>
+          <width>101</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>back</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="stats"/>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_4"/>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1461</width>
+      <height>861</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::NoFrame</enum>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resources.qrc">:/figma/bg.jpg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <zorder>label_5</zorder>
+   <zorder>pushButton</zorder>
+   <zorder>label</zorder>
+   <zorder>frame</zorder>
+   <zorder>frame_2</zorder>
+   <zorder>label_7</zorder>
+   <zorder>frame_4</zorder>
+   <zorder>main_rose</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1440</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QToolBar" name="toolBar_2">
+   <property name="windowTitle">
+    <string>toolBar_2</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+ </widget>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
