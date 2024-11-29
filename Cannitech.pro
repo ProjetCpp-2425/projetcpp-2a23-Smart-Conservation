@@ -1,4 +1,4 @@
-QT       += core gui sql network multimedia multimediawidgets printsupport
+QT       += core gui sql network multimedia multimediawidgets printsupport charts axcontainer
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Cannitech
@@ -9,6 +9,7 @@ CONFIG += c++11
 
 # Source and Header Files
 SOURCES += \
+        commande.cpp \
         connection.cpp \
         employee.cpp \
         main.cpp \
@@ -16,6 +17,7 @@ SOURCES += \
         management.cpp
 
 HEADERS += \
+        commande.h \
         connection.h \
         employee.h \
         mainwindow.h \
@@ -33,7 +35,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 # Resources
 RESOURCES += resources.qrc
-
-DISTFILES += \
-    face.txt
 

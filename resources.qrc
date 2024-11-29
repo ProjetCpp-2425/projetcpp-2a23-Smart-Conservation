@@ -1,5 +1,18 @@
 <RCC>
   <qresource prefix="/images">
+    <file>arrow1.png</file>
+    <file>croped_cannitech.png</file>
+    <file>delivered.png</file>
+    <file>delivery_cannitech.png</file>
+    <file>delivery_jpeg.jpeg</file>
+    <file>export.png</file>
+    <file>final2.jpg</file>
+    <file>in_progress.png</file>
+    <file>ordered.png</file>
+    <file>qrcode_delivered.png</file>
+    <file>qrcode_in_progress.png</file>
+    <file>qrcode_ordered.png</file>
+    <file>stats.png</file>
     <file>logo.ico</file>
     <file>logo.ico</file>
     <file>Cannitech.pro</file>
