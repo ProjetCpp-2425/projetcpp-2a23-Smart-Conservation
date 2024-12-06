@@ -11,6 +11,9 @@
 #include <QTextStream>
 #include <QByteArray>
 #include <QDateTime>
+#include <QSerialPort>
+#include <QSerialPortInfo>
+#include <QRegularExpression>  // Include this for QRegularExpression
 
 using namespace std;
 
@@ -20,14 +23,30 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow) {
     ui->setupUi(this);
 
+    // arduino
+    int ret = A.connect_arduino();
+    // Connect to the Arduino
+    switch(ret) {
+    case(0):
+        qDebug() << "Arduino is available and connected to : " << A.getArduinoPortName();
+        break;
+    case(1):
+        qDebug() << "Arduino is available but not connected to : " << A.getArduinoPortName();
+        break;
+    case(-1):
+        qDebug() << "Arduino is not available";
+    }
+
+    QObject::connect(A.getserial(), SIGNAL(readyRead()), this, SLOT(update_label()));
+
     QRegularExpression re("[A-Za-z]+");
     QRegularExpressionValidator *nameValidator = new QRegularExpressionValidator(re, this);
 
     ui->name1->setValidator(nameValidator);
     ui->name2->setValidator(nameValidator);
     ui->Auth->setCurrentIndex(0); // Sign-in page
-
 }
+
 
 MainWindow::~MainWindow() {
     delete ui;
@@ -348,4 +367,164 @@ void MainWindow::on_face_rec_back_clicked()
           ui->Auth->setCurrentIndex(0);
            m_cameraFaceRecognition->stop();
 }
+/*--------------ARDUINO------------*/
 
+void MainWindow::update_label()
+{
+    // Ensure the arduino object is initialized and connected
+    if (!A.getserial()->isOpen()) {
+        qDebug() << "Arduino is not connected!";
+        return;  // Exit if Arduino is not connected
+    }
+
+    // Read data from the Arduino (this is a QByteArray now)
+    QByteArray data = A.read_from_arduino();  // Keeps QByteArray type
+    if (data.isEmpty()) {
+        qDebug() << "No data received from Arduino.";
+        return;  // Exit if no data is received
+    }
+
+    // Convert QByteArray to QString
+    QString rfidTag = QString::fromUtf8(data).trimmed(); // Convert QByteArray to QString
+    rfidTag = rfidTag.replace("\r\n", "");  // Remove newlines or carriage returns
+    rfidTag = rfidTag.toUpper();  // Convert to uppercase if needed
+    qDebug() << "RFID Tag Received: " << rfidTag;
+
+    // Check if the RFID UID exists in the EMPLOYEE table
+    QSqlQuery query;
+    query.prepare("SELECT * FROM EMPLOYEE WHERE RFID_UID = :rfid");
+    query.bindValue(":rfid", rfidTag);
+
+    if (query.exec() && query.next()) {
+        QString employeeId = query.value("EMPLOYEE_ID").toString();
+        qDebug() << "Employee found with ID: " << employeeId;
+
+        // Insert check-in entry into TABLEH
+        QSqlQuery insertQuery;
+        insertQuery.prepare("INSERT INTO TableH (EMPLOYEEID, CHECK_IN, CHECK_OUT, WORKING_HOURS) "
+                            "VALUES (:id, :checkin, NULL, 0)");
+        insertQuery.bindValue(":id", employeeId);
+        insertQuery.bindValue(":checkin", QDateTime::currentDateTime());
+
+        if (insertQuery.exec()) {
+            qDebug() << "Check-in successful!";
+        } else {
+            qDebug() << "Failed to insert CHECK-IN:" << insertQuery.lastError().text();
+        }
+    } else {
+        qDebug() << "RFID UID not found in the EMPLOYEE table.";
+    }
+}
+
+
+/*void MainWindow::update_label()
+{
+    // Ensure the arduino object is initialized and connected
+    if (!A.getserial()->isOpen()) {
+        qDebug() << "Arduino is not connected!";
+        return;  // Exit if Arduino is not connected
+    }
+
+    // Read data from the Arduino (this is a QByteArray now)
+    QByteArray data = A.read_from_arduino();  // Keeps QByteArray type
+    if (data.isEmpty()) {
+        qDebug() << "No data received from Arduino.";
+        return;  // Exit if no data is received
+    }
+
+    // Convert QByteArray to QString
+    QString rfidTag = QString::fromUtf8(data).trimmed(); // Convert QByteArray to QString
+    rfidTag = rfidTag.replace("\r\n", "");  // Remove newlines or carriage returns
+    rfidTag = rfidTag.toUpper();  // Convert to uppercase if needed
+    qDebug() << "RFID Tag Received: " << rfidTag;
+
+    // Check if the RFID UID exists in the EMPLOYEE table
+    QSqlQuery query;
+    query.prepare("SELECT * FROM EMPLOYEE WHERE RFID_UID = :rfid");
+    query.bindValue(":rfid", rfidTag);
+
+    if (query.exec() && query.next()) {
+        QString employeeId = query.value("EMPLOYEE_ID").toString();
+        qDebug() << "Employee found with ID: " << employeeId;
+
+        // Check if the employee has any existing check-in/out records
+        QSqlQuery checkQuery;
+        checkQuery.prepare("SELECT * FROM TableH WHERE EMPLOYEEID = :id AND CHECK_OUT IS NULL");
+        checkQuery.bindValue(":id", employeeId);
+
+        bool isCheckIn = false; // Initially true for first scan, false for second, etc.
+
+        if (checkQuery.exec() && checkQuery.next()) {
+            // Employee has already checked in, so this must be a check-out
+            isCheckIn = false;
+        } else {
+            // No previous check-in, so this must be a check-in
+            isCheckIn = true;
+        }
+
+        // Insert check-in or check-out entry
+        QSqlQuery insertQuery;
+        if (isCheckIn) {
+            insertQuery.prepare("INSERT INTO TableH (EMPLOYEEID, CHECK_IN, CHECK_OUT, WORKING_HOURS) "
+                                "VALUES (:id, :checkin, NULL, 0)");
+            insertQuery.bindValue(":id", employeeId);
+            insertQuery.bindValue(":checkin", QDateTime::currentDateTime());
+
+            qDebug() << "Executing check-in query: " << insertQuery.lastQuery();  // Debugging query
+
+            if (insertQuery.exec()) {
+                qDebug() << "Check-in successful!";
+            } else {
+                qDebug() << "Failed to insert CHECK-IN:" << insertQuery.lastError().text();
+            }
+        } else {
+            // Check-out logic: calculate working hours
+            QSqlQuery updateQuery;
+            updateQuery.prepare("UPDATE TableH SET CHECK_OUT = :checkout, "
+                                "WORKING_HOURS = :workingHours WHERE EMPLOYEEID = :id AND CHECK_OUT IS NULL");
+            updateQuery.bindValue(":id", employeeId);
+            updateQuery.bindValue(":checkout", QDateTime::currentDateTime());
+
+            // Calculate working hours
+            QDateTime checkInTime = QDateTime::fromString(checkQuery.value("CHECK_IN").toString(), Qt::ISODate);
+            qint64 workingHours = checkInTime.msecsTo(QDateTime::currentDateTime()) / 1000 / 3600;  // Convert ms to hours
+            updateQuery.bindValue(":workingHours", workingHours);
+
+            qDebug() << "Executing check-out query: " << updateQuery.lastQuery();  // Debugging query
+
+            if (updateQuery.exec()) {
+                qDebug() << "Check-out successful!";
+            } else {
+                qDebug() << "Failed to insert CHECK-OUT:" << updateQuery.lastError().text();
+            }
+        }
+    } else {
+        qDebug() << "RFID UID not found in the EMPLOYEE table.";
+    }
+}
+
+void MainWindow::update_check_out(QString employeeId, QDateTime checkoutTime, double workingHours)
+{
+    // Log the values for debugging purposes
+    qDebug() << "Employee ID:" << employeeId;
+    qDebug() << "Checkout Time:" << checkoutTime;
+    qDebug() << "Working Hours:" << workingHours;
+
+    // Prepare the SQL query
+    QSqlQuery query;
+    query.prepare("UPDATE TableH SET CHECK_OUT = :checkout, WORKING_HOURS = :workingHours WHERE EMPLOYEEID = :id AND CHECK_OUT IS NULL");
+
+    // Bind values to the query
+    query.bindValue(":checkout", checkoutTime);
+    query.bindValue(":workingHours", workingHours);
+    query.bindValue(":id", employeeId);
+
+    // Execute the query and check for errors
+    if (!query.exec()) {
+        qDebug() << "Failed to execute query:" << query.lastError();
+        qDebug() << "SQL query:" << query.lastQuery();
+    } else {
+        qDebug() << "Check-out recorded successfully.";
+    }
+}
+*/

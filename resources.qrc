@@ -1,24 +1,39 @@
 <RCC>
-  <qresource prefix="/images">
-    <file>logo.ico</file>
-    <file>logo.ico</file>
-    <file>Cannitech.pro</file>
-    <file>back.png</file>
-    <file>logoh.png</file>
-    <file>logov.png</file>
-    <file>logo.png</file>
-    <file>apps.png</file>
-    <file>add-circle.png</file>
-    <file>bg.jpg</file>
-    <file>community.png</file>
-    <file>Cover.png</file>
-    <file>filter.png</file>
-    <file>icon1.png</file>
-    <file>Icon.png</file>
-    <file>notepad.png</file>
-    <file>notification.png</file>
-    <file>pngwing.com.png</file>
-    <file>users 01.png</file>
-    <file>users 02.png</file>
-  </qresource>
+    <qresource prefix="/images">
+        <file>arrow1.png</file>
+        <file>croped_cannitech.png</file>
+        <file>delivered.png</file>
+        <file>delivery_cannitech.png</file>
+        <file>delivery_jpeg.jpeg</file>
+        <file>export.png</file>
+        <file>final2.jpg</file>
+        <file>in_progress.png</file>
+        <file>ordered.png</file>
+        <file>qrcode_delivered.png</file>
+        <file>qrcode_in_progress.png</file>
+        <file>qrcode_ordered.png</file>
+        <file>stats.png</file>
+        <file>logo.ico</file>
+        <file>logo.ico</file>
+        <file>Cannitech.pro</file>
+        <file>back.png</file>
+        <file>logoh.png</file>
+        <file>logov.png</file>
+        <file>logo.png</file>
+        <file>apps.png</file>
+        <file>add-circle.png</file>
+        <file>bg.jpg</file>
+        <file>community.png</file>
+        <file>Cover.png</file>
+        <file>filter.png</file>
+        <file>icon1.png</file>
+        <file>Icon.png</file>
+        <file>notepad.png</file>
+        <file>notification.png</file>
+        <file>pngwing.com.png</file>
+        <file>users 01.png</file>
+        <file>users 02.png</file>
+        <file>supprimer.png</file>
+        <file>pnghut_user-profile-editing-logo-symbol.png</file>
+    </qresource>
 </RCC>

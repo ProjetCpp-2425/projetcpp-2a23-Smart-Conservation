@@ -30,7 +30,7 @@
      <string notr="true">background-color:transparent;</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="Login">
      <widget class="QGroupBox" name="user">
@@ -59,7 +59,7 @@ color: rgb(27, 160, 25);
        <string>Name</string>
       </property>
       <property name="alignment">
-       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+       <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
       </property>
       <property name="flat">
        <bool>false</bool>
@@ -206,7 +206,7 @@ color: rgb(27, 160, 25);
        <string>Password</string>
       </property>
       <property name="alignment">
-       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+       <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
       </property>
       <property name="flat">
        <bool>false</bool>
@@ -233,7 +233,7 @@ color:grey;</string>
         <string/>
        </property>
        <property name="echoMode">
-        <enum>QLineEdit::Password</enum>
+        <enum>QLineEdit::EchoMode::Password</enum>
        </property>
       </widget>
      </widget>
@@ -288,7 +288,7 @@ color:grey;</string>
        <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="layoutDirection">
-       <enum>Qt::LeftToRight</enum>
+       <enum>Qt::LayoutDirection::LeftToRight</enum>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color:transparent;
@@ -298,7 +298,7 @@ color: #A2A1A8</string>
        <string>Please login here</string>
       </property>
       <property name="alignment">
-       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
       </property>
      </widget>
      <widget class="QWidget" name="widget_2" native="true">
@@ -315,50 +315,6 @@ color: #A2A1A8</string>
 border-radius:20px;
 </string>
       </property>
-      <widget class="QPushButton" name="go_to_face_recog">
-       <property name="geometry">
-        <rect>
-         <x>90</x>
-         <y>450</y>
-         <width>311</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Lexend Light</family>
-         <pointsize>12</pointsize>
-         <bold>false</bold>
-         <strikeout>false</strikeout>
-        </font>
-       </property>
-       <property name="cursor">
-        <cursorShape>PointingHandCursor</cursorShape>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(27, 160, 25);
-color: rgb(255, 255, 255);
-border-radius:10px;</string>
-       </property>
-       <property name="text">
-        <string>Use Face Recognition</string>
-       </property>
-       <property name="checkable">
-        <bool>false</bool>
-       </property>
-       <property name="autoRepeat">
-        <bool>false</bool>
-       </property>
-       <property name="autoDefault">
-        <bool>false</bool>
-       </property>
-       <property name="default">
-        <bool>false</bool>
-       </property>
-       <property name="flat">
-        <bool>false</bool>
-       </property>
-      </widget>
      </widget>
      <widget class="QLabel" name="label_2">
       <property name="geometry">
@@ -389,7 +345,7 @@ border-radius:10px;</string>
        <bool>true</bool>
       </property>
       <property name="alignment">
-       <set>Qt::AlignCenter</set>
+       <set>Qt::AlignmentFlag::AlignCenter</set>
       </property>
       <property name="wordWrap">
        <bool>false</bool>
@@ -556,7 +512,7 @@ border-radius:20px;
             <string notr="true"/>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Box</enum>
+            <enum>QFrame::Shape::Box</enum>
            </property>
            <property name="text">
             <string/>
@@ -679,7 +635,7 @@ border-radius:10px;</string>
        <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="layoutDirection">
-       <enum>Qt::LeftToRight</enum>
+       <enum>Qt::LayoutDirection::LeftToRight</enum>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color:transparent;
@@ -689,7 +645,7 @@ color: #A2A1A8</string>
        <string>Please capture your image</string>
       </property>
       <property name="alignment">
-       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
       </property>
      </widget>
      <widget class="QLabel" name="label_4">
@@ -721,7 +677,7 @@ color: #A2A1A8</string>
        <bool>true</bool>
       </property>
       <property name="alignment">
-       <set>Qt::AlignCenter</set>
+       <set>Qt::AlignmentFlag::AlignCenter</set>
       </property>
       <property name="wordWrap">
        <bool>false</bool>
@@ -877,7 +833,7 @@ border-radius:10px;</string>
        <bool>true</bool>
       </property>
       <property name="alignment">
-       <set>Qt::AlignCenter</set>
+       <set>Qt::AlignmentFlag::AlignCenter</set>
       </property>
       <property name="wordWrap">
        <bool>false</bool>
@@ -929,7 +885,7 @@ border-radius:20px;
           <cursorShape>PointingHandCursor</cursorShape>
          </property>
          <property name="layoutDirection">
-          <enum>Qt::LeftToRight</enum>
+          <enum>Qt::LayoutDirection::LeftToRight</enum>
          </property>
          <property name="styleSheet">
           <string notr="true">background-color:transparent;
@@ -939,7 +895,7 @@ color: #A2A1A8</string>
           <string>Create your account below</string>
          </property>
          <property name="alignment">
-          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
          </property>
         </widget>
         <widget class="QGroupBox" name="user_2">
@@ -968,7 +924,7 @@ color: rgb(27, 160, 25);
           <string>Name</string>
          </property>
          <property name="alignment">
-          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
          </property>
          <property name="flat">
           <bool>false</bool>
@@ -1025,7 +981,7 @@ color: rgb(27, 160, 25);
           <string>Email</string>
          </property>
          <property name="alignment">
-          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
          </property>
          <property name="flat">
           <bool>false</bool>
@@ -1052,7 +1008,7 @@ color:grey;</string>
            <string/>
           </property>
           <property name="echoMode">
-           <enum>QLineEdit::Normal</enum>
+           <enum>QLineEdit::EchoMode::Normal</enum>
           </property>
          </widget>
         </widget>
@@ -1172,7 +1128,7 @@ color: rgb(27, 160, 25);
           <string>Password</string>
          </property>
          <property name="alignment">
-          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
          </property>
          <property name="flat">
           <bool>false</bool>
@@ -1199,7 +1155,7 @@ color:grey;</string>
            <string/>
           </property>
           <property name="echoMode">
-           <enum>QLineEdit::Password</enum>
+           <enum>QLineEdit::EchoMode::Password</enum>
           </property>
          </widget>
         </widget>
@@ -1252,7 +1208,7 @@ color: rgb(27, 160, 25);
           <string>Image ( Optional )</string>
          </property>
          <property name="alignment">
-          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
          </property>
          <property name="flat">
           <bool>false</bool>
@@ -1279,7 +1235,7 @@ color:grey;</string>
            <string/>
           </property>
           <property name="echoMode">
-           <enum>QLineEdit::Normal</enum>
+           <enum>QLineEdit::EchoMode::Normal</enum>
           </property>
          </widget>
         </widget>
@@ -1357,7 +1313,7 @@ color: rgb(27, 160, 25);
           <string>Name</string>
          </property>
          <property name="alignment">
-          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
          </property>
          <property name="flat">
           <bool>false</bool>
@@ -1454,7 +1410,7 @@ border-radius:10px;</string>
           <cursorShape>PointingHandCursor</cursorShape>
          </property>
          <property name="layoutDirection">
-          <enum>Qt::LeftToRight</enum>
+          <enum>Qt::LayoutDirection::LeftToRight</enum>
          </property>
          <property name="styleSheet">
           <string notr="true">background-color:transparent;
@@ -1464,7 +1420,7 @@ color: #A2A1A8</string>
           <string>We’ve sent a 6-digit code to your phone number. Enter it below to continue</string>
          </property>
          <property name="alignment">
-          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
          </property>
         </widget>
         <widget class="QLabel" name="Title_3">
@@ -1825,7 +1781,7 @@ border-style:solid;</string>
        <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="layoutDirection">
-       <enum>Qt::LeftToRight</enum>
+       <enum>Qt::LayoutDirection::LeftToRight</enum>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color:transparent;
@@ -1835,7 +1791,7 @@ color: #A2A1A8</string>
        <string>Stay still</string>
       </property>
       <property name="alignment">
-       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
       </property>
      </widget>
      <widget class="QLabel" name="label_5">
@@ -1867,7 +1823,7 @@ color: #A2A1A8</string>
        <bool>true</bool>
       </property>
       <property name="alignment">
-       <set>Qt::AlignCenter</set>
+       <set>Qt::AlignmentFlag::AlignCenter</set>
       </property>
       <property name="wordWrap">
        <bool>false</bool>
