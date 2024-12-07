@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>email</class>
+ <widget class="QDialog" name="email">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>568</width>
+    <height>492</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QFrame" name="stat1_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>551</width>
+     <height>471</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QFrame {
+    background-color: white; /* Background color for the frame */
+    border: none;            /* No border for the frame */
+    border-bottom: 2px solid #d0d0d0; /* Bottom border */
+    border-right: 2px solid #d0d0d0;  /* Right border */
+    border-radius: 8px;     /* Rounded corners */
+}
+</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QPushButton" name="send">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>10</y>
+      <width>101</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">*{
+background:#1ba019;
+border-radius:25px;
+color:white;
+font-family: Lexend;
+font-size:16px;
+}
+QPushButton:hover
+{
+background:#00b521;
+color:white;
+border-left:3px solid #1BA019 ; 
+border-color:none;
+border-radius:25px;
+
+
+
+
+}
+QPushButton:pressed
+{
+background:#013220;
+color:black;
+border-radius:25px;
+color:white;
+font-family: Lexend;
+font-size:16px;
+border-radius:10px;
+border-left:3.5px solid #1BA019 ; 
+
+
+/*background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #ffffff, stop: 1 #dcdcdc);*/
+}</string>
+    </property>
+    <property name="text">
+     <string>Send</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="cancel">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>70</y>
+      <width>101</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">*{
+border-radius:25px;
+color:#1ba019;
+font-family: Lexend;
+font-size:16px;
+border-color: rgb(27, 160, 25);
+border-width : 1.2px;
+border-style:solid;
+background-color:white;
+}
+QPushButton:hover
+{
+background:white;
+color:#00b521;
+border-left:3px solid #00b521 ; 
+border-color:none;
+border-radius:25px;
+}
+QPushButton:pressed
+{
+background:#013220;
+color:#1ba019;
+border-radius:25px;
+font-family: Lexend;
+font-size:16px;
+border-left:3.2px solid #1BA019 ; 
+
+
+/*background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #ffffff, stop: 1 #dcdcdc);*/
+}</string>
+    </property>
+    <property name="text">
+     <string>Cancel</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>431</width>
+      <height>461</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="7" column="0">
+      <widget class="QLabel" name="label_4">
+       <property name="styleSheet">
+        <string notr="true">color:black;</string>
+       </property>
+       <property name="text">
+        <string>Message :</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="styleSheet">
+        <string notr="true">color:black;</string>
+       </property>
+       <property name="text">
+        <string>To :</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0" colspan="2">
+      <widget class="QLineEdit" name="toLineEdit"/>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="styleSheet">
+        <string notr="true">color:black;</string>
+       </property>
+       <property name="text">
+        <string>Subject :</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0" colspan="2">
+      <widget class="QLineEdit" name="subjectLineEdit"/>
+     </item>
+     <item row="1" column="0" colspan="2">
+      <widget class="QLabel" name="label">
+       <property name="styleSheet">
+        <string notr="true">color:black;</string>
+       </property>
+       <property name="text">
+        <string>From :</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0" colspan="2">
+      <widget class="QLineEdit" name="fromLineEdit"/>
+     </item>
+     <item row="8" column="0">
+      <widget class="QTextEdit" name="messageTextEdit"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
