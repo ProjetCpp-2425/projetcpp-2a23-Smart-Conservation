@@ -22,6 +22,8 @@
 #include <QScopedPointer>
 #include <QMediaDevices>
 #include <QBuffer>
+//arduino
+#include "arduino.h" // Updated to reflect the new name
 
 
 namespace Ui {
@@ -62,6 +64,12 @@ private:
     QVideoWidget *videoWidget; // Pointer to the video widget
     QImage m_capturedImage; // Add this line
 
+    // arduino
+    QByteArray data; // variable contenant les données reçues
+
+    arduino A ;
+    arduino arduino ;// Updated to use the correct class name
+
 private slots:
     void setCamera1(const QCameraDevice &cameraDevice);
     void setCamera2(const QCameraDevice &cameraDevice);
@@ -73,6 +81,8 @@ private slots:
     void on_back_cam_clicked();
     void on_go_to_face_recog_clicked();
     void on_face_rec_back_clicked();
+    void update_label();
+    //void update_check_out(QString employeeId, QDateTime checkoutTime, double workingHours);
 };
 
 #endif // MAINWINDOW_H

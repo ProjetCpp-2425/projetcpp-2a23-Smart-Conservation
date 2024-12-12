@@ -1,0 +1,10 @@
+release/arduino_yr.o
+release/commande.o
+release/connection.o
+release/employee.o
+release/main.o
+release/mainwindow.o
+release/management.o
+release/qrc_resources.o
+release/moc_mainwindow.o
+release/moc_management.o

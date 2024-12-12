@@ -101,14 +101,14 @@ void Employee::readEmployee(QTableWidget *table) {
 
 void Employee::readHistorique(QTableWidget *tableH, QString employeeId) {
     tableH->setRowCount(0);
-    tableH->setColumnCount(6);
+    tableH->setColumnCount(3);
 
-    QStringList headers = {"Presence ID", "Employee ID", "Check-In", "Check-Out", "Working Hours", "Status"};
+    QStringList headers = {"Presence ID", "Employee ID", "Check-In", /*"Check-Out", "Working Hours"*/};
     tableH->setHorizontalHeaderLabels(headers);
     tableH->horizontalHeader()->setDefaultSectionSize(163);
 
-    QSqlQuery query;
-    query.prepare("SELECT presence_id, employee_id, check_in, check_out, working_hours, status FROM presence WHERE employee_id = :employeeId");
+    QSqlQuery query;// lena nbadel tableH b table presence
+    query.prepare("SELECT PRESENCEID, EMPLOYEEID, CHECK_IN, CHECK_OUT, WORKING_HOURS FROM PRESENCE WHERE EMPLOYEEID = :employeeId");
     query.bindValue(":employeeId", employeeId);
 
     if (query.exec()) {
@@ -122,9 +122,9 @@ void Employee::readHistorique(QTableWidget *tableH, QString employeeId) {
         do {
             tableH->insertRow(row);
 
-            for (int column = 0; column < 6; ++column) {
+            for (int column = 0; column < 3; ++column) {
                 QTableWidgetItem *item = new QTableWidgetItem(query.value(column).toString());
-                item->setTextAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+                //item->setTextAlignment(/*Qt::AlignLeft |*/ Qt::AlignVCenter);
                 if (column == 2 || column == 3) {  // Check-In and Check-Out columns
                     QDateTime datetime = query.value(column).toDateTime();
                     item->setText(datetime.toString("yyyy-MM-dd HH:mm:ss"));
@@ -249,7 +249,8 @@ QSqlQueryModel* Employee::rechercher(const QString &type, const QString &text)
         // Handle error (optional)
         qDebug() << "Query Error:" << query.lastError().text();
     }
-    model->setQuery(query);
+    model->setQuery(std::move(query));
+
     return model;
 }
 void Employee::exportPresence(QTableWidget *tableH)

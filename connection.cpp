@@ -6,13 +6,16 @@ bool Connection::connect()
 {
     bool test=false;
     QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
-    db.setDatabaseName("Projet_CPP");
+    db.setDatabaseName("Driver={Oracle in XE};DSN=Projet_CPP;");
     db.setUserName("terranova");
     db.setPassword("terranova");
 
     if (db.open()) {
-        test =true;
-       }
+        test = true;
+    } else {
+        qDebug() << "Database connection failed:" << db.lastError().text();
+    }
+
     return test;
 
 }

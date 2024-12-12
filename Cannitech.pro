@@ -1,14 +1,16 @@
-QT       += core gui sql network multimedia multimediawidgets printsupport
+QT       += core gui sql network multimedia multimediawidgets printsupport charts axcontainer serialport
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Cannitech
 TEMPLATE = app
 
 DEFINES += QT_DEPRECATED_WARNINGS
-CONFIG += c++11
+CONFIG += c++17
 
 # Source and Header Files
 SOURCES += \
+        arduino.cpp \
+        commande.cpp \
         connection.cpp \
         employee.cpp \
         main.cpp \
@@ -16,6 +18,8 @@ SOURCES += \
         management.cpp
 
 HEADERS += \
+        arduino.h \
+        commande.h \
         connection.h \
         employee.h \
         mainwindow.h \
@@ -33,7 +37,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 # Resources
 RESOURCES += resources.qrc
-
-DISTFILES += \
-    face.txt
 
