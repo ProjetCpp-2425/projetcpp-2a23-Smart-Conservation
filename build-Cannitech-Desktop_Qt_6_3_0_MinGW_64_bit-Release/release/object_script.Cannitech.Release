@@ -1,0 +1,17 @@
+release/arduino.o
+release/client.o
+release/commande.o
+release/connection.o
+release/employee.o
+release/factory.o
+release/machine.o
+release/main.o
+release/mainwindow.o
+release/management.o
+release/email.o
+release/qrc_resources.o
+release/moc_client.o
+release/moc_machine.o
+release/moc_mainwindow.o
+release/moc_management.o
+release/moc_email.o
